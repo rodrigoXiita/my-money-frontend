@@ -5,13 +5,15 @@ import App from './main/app'
 import Reducers from './main/reducers'
 import {applyMiddleware ,createStore} from 'redux'
 import Promise from 'redux-promise'
+import multi from 'redux-multi'
+import thunk from 'redux-thunk'
 import {Provider} from 'react-redux'
 
 
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ &&
                  window.__REDUX_DEVTOOLS_EXTENSION__()
-const store = applyMiddleware(Promise)(createStore)(Reducers, devTools)
+const store = applyMiddleware(Promise, multi, thunk)(createStore)(Reducers, devTools)
 ReactDom.render(
   <Provider store={store}>
       <App/>
