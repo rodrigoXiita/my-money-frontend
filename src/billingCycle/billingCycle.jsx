@@ -41,13 +41,13 @@ componentWillMount() {
                 <BillingCycleList/>
               </TabContent>
               <TabContent id='tabCreate'>
-                <BillingCycleForm onSubmit={create}/>
+                <BillingCycleForm onSubmit={create} submitLabel={'Incluir'} submitClass={'primary'}/>
               </TabContent>
               <TabContent id='tabUpdate'>
-                  <BillingCycleForm onSubmit={update}/>
+                  <BillingCycleForm onSubmit={update} submitLabel={'Alterar'} submitClass={'info'}/>
               </TabContent>
               <TabContent id='tabDelete'>
-                  <BillingCycleForm onSubmit={remove} readOnly={true}/>
+                  <BillingCycleForm onSubmit={remove} readOnly={true} submitLabel={'Excluir'} submitClass={'danger'}/>
               </TabContent>
             </TabsContent>
           </Tabs>
