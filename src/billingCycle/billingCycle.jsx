@@ -13,7 +13,7 @@ import TabHeader from '../common/tab/tabHeader'
 import TabContent from '../common/tab/tabContent'
 import BillingCycleList from './billingCycleList'
 import BillingCycleForm from './billingCycleForm'
-import {create} from './billingCycleActions'
+import {create, update, remove} from './billingCycleActions'
 
 class BillingCycle extends Component{
 
@@ -23,6 +23,8 @@ componentWillMount() {
 }
 
   render(){
+
+    const {create, update, remove} = this.props
     return (
       <div>
         <ContentHeader title='Ciclos de Pagamentos' small='Cadastro'/>
@@ -39,12 +41,14 @@ componentWillMount() {
                 <BillingCycleList/>
               </TabContent>
               <TabContent id='tabCreate'>
-                <BillingCycleForm onSubmit={this.props.create}/>
+                <BillingCycleForm onSubmit={create}/>
               </TabContent>
               <TabContent id='tabUpdate'>
-                  <BillingCycleForm/>
+                  <BillingCycleForm onSubmit={update}/>
               </TabContent>
-              <TabContent id='tabDelete'><h1>Excluir</h1></TabContent>
+              <TabContent id='tabDelete'>
+                  <BillingCycleForm onSubmit={remove} readOnly={true}/>
+              </TabContent>
             </TabsContent>
           </Tabs>
         </Content>
@@ -54,6 +58,6 @@ componentWillMount() {
 }
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-  selectTab, showTabs, create
+  selectTab, showTabs, create, update, remove
 }, dispatch);
 export default connect(null, mapDispatchToProps)(BillingCycle);
