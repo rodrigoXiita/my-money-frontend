@@ -1,4 +1,4 @@
-import consts  from "../consts";'../consts'
+import consts  from "../consts";
 import axios from 'axios'
 
 const BASE_URL = consts.API_URL
