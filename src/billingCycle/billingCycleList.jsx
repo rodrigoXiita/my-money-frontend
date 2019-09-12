@@ -5,7 +5,7 @@ import {getList, showUpdate, showDelete} from './billingCycleActions'
 
 class BillingCycleList extends Component {
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.getList()
   }
 

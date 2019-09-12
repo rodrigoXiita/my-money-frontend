@@ -15,7 +15,7 @@ import {init ,create, update, remove} from './billingCycleActions'
 
 class BillingCycle extends Component{
 
-componentWillMount() {
+componentDidMount() {
     this.props.init()
 }
 

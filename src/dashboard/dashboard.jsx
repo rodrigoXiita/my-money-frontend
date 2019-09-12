@@ -10,7 +10,7 @@ import {currencyFormat} from '../common/formaters/NumberFormat'
 
 class Dashboard extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getSummary()
   }
 
